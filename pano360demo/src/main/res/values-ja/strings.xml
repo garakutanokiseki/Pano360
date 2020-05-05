@@ -8,10 +8,10 @@
     <string name="title_4">Demo Image</string>
     <string name="title_5">Play Online</string>
     <string name="title_6">About</string>
-    <string name="content_text_1">Play sample panoramic video</string>
-    <string name="content_text_2">Select local video playback</string>
-    <string name="content_text_3">2D Video VR Cinema imitating UtoVR</string>
-    <string name="content_text_4">Play sample panoramic image</string>
-    <string name="content_text_5">Play online video, URL defaults to UtoVR test video</string>
+    <string name="content_text_1">サンプルのパノラマビデオを再生する</string>
+    <string name="content_text_2">ローカルビデオ再生を選択</string>
+    <string name="content_text_3">UtoVRを模倣した2DビデオVRシネマ</string>
+    <string name="content_text_4">サンプルのパノラマ画像を再生</string>
+    <string name="content_text_5">オンライン動画を再生、URLはデフォルトでUtoVRテスト動画</string>
     <string name="content_text_6">Email : Martin20150405@163.com</string>
 </resources>

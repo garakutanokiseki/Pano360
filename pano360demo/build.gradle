@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.2"
 
     defaultConfig {
         applicationId "com.martin.ads.pano360demo"
@@ -41,7 +40,7 @@ dependencies {
         exclude module: "support-v13"
     }
     annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.1.0"
-    testCompile 'junit:junit:4.12'
-    compile project(':filepicker')
-    compile project(':vrlib')
+    testImplementation 'junit:junit:4.12'
+    implementation project(':filepicker')
+    implementation project(':vrlib')
 }
