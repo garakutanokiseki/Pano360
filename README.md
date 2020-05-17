@@ -3,44 +3,44 @@
 
 Pure Java library to play 360 degree panorama video (VR video) on Android. Using OpenGL ES 2.0 
   
-Pano 360 是一个Android平台下纯Java的全景（360度/VR）视频播放库，使用OpenGL ES 2.0来进行视频渲染，没有使用第三方库
+Pano 360は、Androidプラットフォーム上の純粋なJavaパノラマ（360度/ VR）ビデオ再生ライブラリで、ビデオレンダリングにOpenGL ES 2.0を使用し、サードパーティのライブラリは使用されません。
 
-**Demo App [在这里下](https://raw.githubusercontent.com/Martin20150405/Pano360/master/pano360demo/release/pano360demo-release.apk)~**
+**Demo App [ここ](https://raw.githubusercontent.com/Martin20150405/Pano360/master/pano360demo/release/pano360demo-release.apk)~**
 
 ### Read this in other languages: [English](README.en.md)
 
-## [系列教程：从零开始写一个Android平台下的全景视频播放器](http://blog.csdn.net/Martin20150405/article/details/53149578)
+## [一連のチュートリアル：Androidプラットフォームでパノラマ動画プレーヤーを最初から作成する](http://blog.csdn.net/Martin20150405/article/details/53149578)
 
 
-## 平台需求
+## プラットフォーム要件
 * OpenGL ES 2.0 
 * Android 4.0.3 (API-15) 以上
 
-## 特性
-* 单、双屏切换
-* 陀螺仪、触控(拖动、缩放)两种交互模式切换
-* 播放进度控制，控制栏自动隐藏
-* 类似GPUImage的滤镜组，支持多个滤镜叠加，滤镜顺序可在渲染到球体之前或之后
-* 支持原视频渲染（铺满屏幕/剪切/自适应）
-* 支持播放全景图片
-* 视频实时截图
-* 在线视频播放（你可能需要自行处理多种格式的解码问题）
-* 支持锁定任意坐标轴,用户从不同角度进入，看到的是同一个场景
-    * **LOCK_MODE_AXIS_Y**： 和Cardboard Motion类似
-* 支持忽略任意坐标轴的旋转角度
-* 2D视频VR影院模式 
-* 支持简单热点(图片/视频)
-	
-## 截图
+## 特徴
+* シングルおよびデュアル画面切り替え
+* ジャイロ、タッチ（ドラッグ、ズーム）2つのインタラクティブモード切り替え
+* 進行状況コントロールを再生します。コントロールバーは自動的に非表示になります
+* GPUImageフィルターグループと同様に、重ねられた複数のフィルターをサポートします。フィルターの順序は、球体へのレンダリングの前でも後でもかまいません。
+* オリジナルのビデオレンダリングをサポート（フルスクリーン/カット/アダプティブ）
+* パノラマ写真の再生をサポート
+* リアルタイムのビデオスクリーンショット
+* オンラインビデオ再生（複数の形式のデコードの問題を自分で処理する必要がある場合があります）
+* 座標軸のロックをサポートし、ユーザーはさまざまな角度から入り、同じシーンを見ることができます
+     * ** LOCK_MODE_AXIS_Y **：Cardboard Motionと同様
+* 座標軸の回転角度を無視するサポート
+* 2DビデオVRシネマモード
+* シンプルなホットスポットをサポート（写真/ビデオ）
+
+## スクリーンショット
 ![ScreenShot](https://github.com/Martin20150405/Pano360/blob/master/screenshots/player_screen.png)
 
 [**Youtube**](https://youtu.be/kTJfI_dRLUk)
-[**优酷**](http://v.youku.com/v_show/id_XMjY4ODI4OTM3Mg==?spm=a2h3j.8428770.3416059.1)
+[**youku**](http://v.youku.com/v_show/id_XMjY4ODI4OTM3Mg==?spm=a2h3j.8428770.3416059.1)
 
-## 适用对象
-*  如果你对于如何实现一个Android平台下的全景视频播放器感兴趣，或者急于使用一个带播放控制功能的全景视频播放器，或者有意在全景视频播放器中加入各种奇怪的功能，这个项目可能会对你有帮助。
+## 適切
+* Androidプラットフォームでパノラマ動画プレーヤーを実装する方法に興味がある場合、または再生コントロール機能付きのパノラマ動画プレーヤーを使いたい場合、またはパノラマ動画プレーヤーにさまざまな奇妙な機能を追加する場合は、このプロジェクトが 手伝います。
 
-## 如何使用
+## 使い方
 	allprojects {
 		repositories {
 			...
@@ -51,14 +51,14 @@ Pano 360 是一个Android平台下纯Java的全景（360度/VR）视频播放库
 	        compile 'com.github.Martin20150405.Pano360:vrlib:v1.1.2'
 	}
 	
-* 有两种方法可以使用该库，详情请参考Demo App  
+* ライブラリを使用するには2つの方法があります。詳細については、デモアプリを参照してください。  
 
-* 一行代码使用带播放控制的`Activity`  （由类库提供）
+* 1行のコードで使用`Activity`  （クラスライブラリが提供）
 ```java
 Pano360ConfigBundle.newInstance().setFilePath(filePath).startEmbeddedActivity(this);
 ```
 
-* 提供一个`GLSurfaceView`,你可以在任意地方使用，但是需要自己处理播放控制和模式切换
+* `GLSurfaceView`を提供します。どこでも使用できますが、再生コントロールとモード切り替えを自分で処理する必要があります
 ```java
 <android.opengl.GLSurfaceView
     android:id="@+id/surface_view"
@@ -96,27 +96,26 @@ protected void onDestroy(){
 }
 ```
 
-## 未来特性（不要期望过高- -|||）
-* 加速度+电子罗盘支持（适合没有陀螺仪的手机）
-* 快速切换使用的解码器，例如IjkMediaPlayer
-* 小窗口/fragment播放
-* Handler+MessageQueue
-* 多种全景格式
-* 热点支持（Hotspot）、头控支持
-* Anti Distortion
-* RTSP RTMP (with VLC/Vitamio)
-* 完整播放控制功能
-* 视频录制/转码/倍速播放 (Mediacodec/ffmpeg)
+## 将来の機能（あまり期待しないでください-|||）
+* 加速度+電子コンパスのサポート（ジャイロスコープのない携帯電話に適しています）
+* IjkMediaPlayerなどの使用するデコーダーをすばやく切り替える
+* 小さなウィンドウ/フラグメントの再生
+* ハンドラ+ MessageQueue
+* さまざまなパノラマ形式
+* ホットスポットサポート（ホットスポット）、ヘッドコントロールサポート
+* アンチディストーション
+* RTSP RTMP（VLC / Vitamio付き）
+* 完全な再生制御機能
+* ビデオ録画/トランスコーディング/倍速再生（Mediacodec / ffmpeg）
 
-## [历史版本](https://github.com/Martin20150405/Pano360/releases)
+## [過去のバージョン](https://github.com/Martin20150405/Pano360/releases)
 
-## [更新日志](https://github.com/Martin20150405/Pano360/wiki/ChangeLog)
+## [更新ログ](https://github.com/Martin20150405/Pano360/wiki/ChangeLog)
 
 
 
-## 反馈交流
+## フィードバック
 
-* 开启一个issue
-* 发送邮件至martin20150405@163.com
-* 如果觉得这个项目对你有帮助，欢迎star,欢迎来一起改进这个项目
-
+* 問題を開く
+* martin20150405@163.comにメールを送信
+* このプロジェクトがあなたに役立つと思われる場合は、スターを歓迎し、一緒にこのプロジェクトを改善することを歓迎します
